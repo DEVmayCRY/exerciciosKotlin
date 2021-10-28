@@ -18,14 +18,24 @@ fun main() {
     do {
         num = readLine()!!.toInt()
         total += num
-        if(num > maNum){
-            maNum = num
-        }else if (num < meNum){
-            meNum = num
+
+        if(num != 0){
+            if(num > maNum){
+                maNum = num
+            }else if (num < meNum){
+                meNum = num
+            }
+            cont++
+            if(maNum == 0){
+                maNum = num
+            }
+            if(meNum == 0){
+                meNum = num
+            }
         }
-        cont++
+
     }while (num != 0)
-    println("A soma de todos os números é $total.\n A média deles é ${total/(cont-1)}." +
+    println("A soma de todos os números é $total.\n A média deles é ${total/(cont-1).toDouble()}." +
             "\nO maior número é $maNum.\nO menor número é $meNum.")
 }
 
